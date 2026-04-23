@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>笛飛兒 EQ 教育｜國小孩子的情緒成長課程</title>
+  <meta name="description" content="笛飛兒 EQ 教育，為 6–12 歲孩子打造情緒管理、人際互動與自我認同的成長課程。" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    :root{
+      --blue:#285DAE;
+      --blue-700:#214C90;
+      --blue-light:#E5EDF8;
+      --blue-pale:#EEF4FC;
+      --yellow:#F2CF50;
+      --yellow-light:#FDF7DC;
+      --yellow-pale:#FFFAED;
+      --yellow-dark:#C9A820;
+      --cream:#F7F0DF;
+      --cream2:#FBF6EC;
+      --green:#72984B;
+      --green-light:#EBF2E2;
+      --green-pale:#F2F7EB;
+      --white:#FFFFFF;
+      --gray900:#2D2A24;
+      --gray700:#48453E;
+      --gray600:#5E5C56;
+      --gray400:#8E8A82;
+      --gray250:#C9C2B5;
+      --gray200:#DDD8CE;
+      --gray100:#F0EBE0;
+      --shadow-sm:0 8px 18px rgba(45,42,36,.05);
+      --shadow-md:0 18px 44px rgba(40,93,174,.12);
+      --shadow-lg:0 24px 60px rgba(40,93,174,.18);
+      --radius-xl:32px;
+      --radius-lg:24px;
+      --radius-md:18px;
+      --max:1200px;
+    }
+
+    body{
+      font-family:'Noto Sans TC',sans-serif;
+      background:linear-gradient(180deg,#F7F0DF 0%, #FBF6EC 100%);
+      color:var(--gray900);
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    img,svg{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+
+    .wrap{width:min(calc(100% - 40px), var(--max));margin:0 auto}
+    .sec{padding:88px 0}
+    .panel{
+      border-radius:40px;
+      box-shadow:var(--shadow-sm);
+      overflow:hidden;
+    }
+
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 16px;border-radius:999px;
+      font:800 11px/1 'Nunito',sans-serif;letter-spacing:2px;
+      text-transform:uppercase;
+    }
+    .eyebrow.blue{background:var(--blue-pale);color:var(--blue)}
+    .eyebrow.green{background:var(--green-pale);color:var(--green)}
+    .eyebrow.yellow{background:var(--yellow-light);color:var(--yellow-dark)}
+
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+    .section-head p{max-width:620px;color:var(--gray600);font-size:15px;line-height:1.9;margin-top:14px}
+    .h2{font:900 clamp(28px,3vw,42px)/1.2 'Nunito',sans-serif;letter-spacing:-.02em;margin-top:14px}
+
+    /* nav */
+    .nav-shell{position:sticky;top:0;z-index:1000;padding:16px 0 0}
+    nav{
+      width:min(calc(100% - 24px), 1240px);margin:0 auto;
+      background:rgba(255,255,255,.86);
+      border:1px solid rgba(255,255,255,.8);
+      backdrop-filter:blur(14px);
+      box-shadow:0 10px 30px rgba(45,42,36,.08);
+      border-radius:24px;
+      min-height:74px;
+      padding:12px 18px;
+      display:flex;align-items:center;justify-content:space-between;gap:18px;
+    }
+    .brand{display:flex;align-items:center;gap:14px;min-width:max-content}
+    .brand-pill{
+      background:var(--blue);padding:8px 14px;border-radius:18px;
+      display:flex;align-items:center;gap:8px;
+      box-shadow:0 8px 18px rgba(40,93,174,.22);
+    }
+    .brand-pill strong{font-size:16px;font-weight:900;color:#fff;letter-spacing:1px}
+    .brand-pill i{width:6px;height:6px;border-radius:999px;background:var(--yellow);display:inline-block}
+    .brand-pill span{font:800 9px/1 'Nunito',sans-serif;color:rgba(255,255,255,.72);letter-spacing:2px}
+    .brand-copy small{display:block;color:var(--gray400);font-size:11px;line-height:1.2}
+    .brand-copy b{display:block;color:var(--gray900);font-size:14px}
+    .nav-links{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+    .nav-links a.link{
+      padding:10px 14px;border-radius:999px;color:var(--gray600);
+      font-size:13px;font-weight:700;transition:.2s ease;
+    }
+    .nav-links a.link:hover{background:var(--cream2);color:var(--blue)}
+    .btn-primary,.btn-secondary,.btn-tertiary{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      border-radius:999px;font-weight:800;transition:.2s ease;white-space:nowrap
+    }
+    .btn-primary{background:var(--blue);color:#fff;padding:14px 28px;box-shadow:0 12px 24px rgba(40,93,174,.24)}
+    .btn-primary:hover{transform:translateY(-2px);background:var(--blue-700)}
+    .btn-secondary{background:#fff;color:var(--green);border:2px solid var(--green);padding:14px 28px}
+    .btn-secondary:hover{background:var(--green);color:#fff}
+    .btn-tertiary{background:var(--blue-pale);color:var(--blue);padding:11px 18px;font-size:13px}
+    .btn-tertiary:hover{transform:translateY(-2px)}
+
+    /* hero */
+    .hero-wrap{padding:28px 0 22px}
+    .hero{
+      position:relative;overflow:hidden;
+      background:linear-gradient(180deg,#FBF6EC 0%, #FFFCF5 100%);
+      border-radius:48px;
+      padding:72px clamp(24px,4vw,52px);
+      display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;
+      box-shadow:var(--shadow-md);
+      isolation:isolate;
+    }
+    .hero:before,.hero:after{
+      content:"";position:absolute;border-radius:999px;pointer-events:none;z-index:-1;filter:blur(2px)
+    }
+    .hero:before{width:420px;height:420px;right:-80px;top:-100px;background:rgba(242,207,80,.26)}
+    .hero:after{width:280px;height:280px;left:-40px;bottom:-70px;background:rgba(114,152,75,.14)}
+    .hero-copy{max-width:620px}
+    .hero-kicker{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--yellow);padding:8px 16px;border-radius:999px;color:var(--gray700);font-size:12px;font-weight:700;margin-bottom:22px}
+    .hero-kicker i{width:8px;height:8px;border-radius:999px;background:var(--yellow);display:inline-block}
+    .hero-en{font:800 11px/1 'Nunito',sans-serif;letter-spacing:4px;color:var(--gray250);margin-bottom:12px}
+    .hero h1{font:900 clamp(40px,5.1vw,68px)/1.08 'Nunito',sans-serif;letter-spacing:-.03em}
+    .hero h1 .blue{color:var(--blue)}
+    .hero h1 .green{color:var(--green)}
+    .hero h1 .mark{display:inline-block;padding:2px 10px;border-radius:14px;background:var(--yellow);transform:rotate(-1.5deg)}
+    .hero p{margin-top:22px;max-width:540px;font-size:16px;line-height:1.95;color:var(--gray600)}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+    .hero-notes{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;color:var(--gray600);font-size:13px}
+    .hero-notes span{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.72);padding:9px 14px;border-radius:999px;border:1px solid rgba(221,216,206,.9)}
+    .hero-visual-card{
+      background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.8);
+      border-radius:36px;padding:24px;box-shadow:var(--shadow-md)
+    }
+
+    /* stats */
+    .stats{margin-top:-24px;position:relative;z-index:2}
+    .stats-grid{
+      background:var(--blue);border-radius:28px;padding:28px 20px;
+      display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+      box-shadow:var(--shadow-lg)
+    }
+    .stat{text-align:center;color:#fff;padding:8px 10px;border-radius:18px;background:rgba(255,255,255,.04)}
+    .stat strong{display:block;font:900 clamp(28px,3vw,40px)/1 'Nunito',sans-serif}
+    .stat span{display:block;margin-top:8px;font-size:12px;color:rgba(255,255,255,.76);letter-spacing:.03em}
+
+    /* cards */
+    .cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .course-card,.story-card,.info-card,.feature-card,.contact-card{
+      border-radius:28px;background:#fff;border:1px solid var(--gray100);box-shadow:var(--shadow-sm)
+    }
+    .course-card{overflow:hidden;height:100%;display:flex;flex-direction:column}
+    .course-top{padding:28px 24px 20px;position:relative}
+    .course-top.blue{background:var(--blue-pale)}
+    .course-top.yellow{background:var(--yellow-pale)}
+    .course-top.green{background:var(--green-pale)}
+    .icon-box{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;font-size:28px;color:#fff;margin-bottom:16px}
+    .icon-box.blue{background:var(--blue)}
+    .icon-box.yellow{background:var(--yellow-dark)}
+    .icon-box.green{background:var(--green)}
+    .level{position:absolute;right:22px;top:22px;padding:6px 12px;border-radius:999px;font-size:11px;font-weight:800}
+    .level.blue{background:var(--blue);color:#fff}
+    .level.yellow{background:var(--yellow);color:var(--gray900)}
+    .level.green{background:var(--green);color:#fff}
+    .course-top small{display:block;font:800 10px/1 'Nunito',sans-serif;letter-spacing:2px;color:var(--gray250);text-transform:uppercase;margin-bottom:8px}
+    .course-top h3{font-size:20px;font-weight:900}
+    .course-body{padding:24px;display:flex;flex:1;flex-direction:column}
+    .course-body p{font-size:14px;line-height:1.8;color:var(--gray600);flex:1}
+    .course-body a{margin-top:18px;font-size:14px;font-weight:800}
+
+    .why-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:34px;align-items:center}
+    .why-list{display:grid;gap:16px;margin-top:26px}
+    .feature-card{padding:18px 18px 18px 16px;display:flex;gap:14px;align-items:flex-start}
+    .feature-icon{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;font-size:22px;flex:0 0 auto}
+    .feature-icon.blue{background:var(--blue-pale)}
+    .feature-icon.yellow{background:var(--yellow-light)}
+    .feature-icon.green{background:var(--green-pale)}
+    .feature-card h4{font-size:15px;font-weight:900;margin-bottom:5px}
+    .feature-card p{font-size:13px;line-height:1.7;color:var(--gray600)}
+
+    .visual-panel{
+      background:linear-gradient(180deg,#FFFDF7 0%, #F8F1E2 100%);
+      border:1px solid var(--gray100);padding:22px;border-radius:32px;box-shadow:var(--shadow-sm)
+    }
+    .mini-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .mini-badges span{padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--gray100);font-size:12px;color:var(--gray600)}
+
+    .story-wrap{background:var(--yellow-light);padding:32px;border-radius:40px;box-shadow:var(--shadow-sm)}
+    .story-card{padding:24px;height:100%}
+    .quote{font:900 44px/1 'Nunito',sans-serif;color:var(--yellow-dark);margin-bottom:6px}
+    .story-card p{font-size:14px;line-height:1.9;color:var(--gray600)}
+    .author{display:flex;align-items:center;gap:12px;margin-top:18px}
+    .avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:900}
+    .avatar.blue{background:var(--blue);color:#fff}
+    .avatar.yellow{background:var(--yellow);color:var(--gray900)}
+    .avatar.green{background:var(--green);color:#fff}
+    .author strong{display:block;font-size:14px}
+    .author span{font-size:12px;color:var(--gray400)}
+
+    .camp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .info-card{display:flex;gap:0;overflow:hidden}
+    .info-bar{width:9px;flex:0 0 auto}
+    .info-bar.blue{background:var(--blue)}
+    .info-bar.yellow{background:var(--yellow)}
+    .info-body{padding:22px}
+    .info-body small{display:block;font:800 10px/1 'Nunito',sans-serif;letter-spacing:2px;color:var(--gray400);margin-bottom:8px}
+    .info-body h3{font-size:18px;font-weight:900;margin-bottom:8px}
+    .info-body p{font-size:13px;line-height:1.8;color:var(--gray600)}
+
+    .bridge{
+      background:var(--blue);color:#fff;border-radius:40px;padding:56px 36px;position:relative;overflow:hidden;box-shadow:var(--shadow-lg)
+    }
+    .bridge:before,.bridge:after{content:"";position:absolute;border-radius:999px;pointer-events:none}
+    .bridge:before{width:260px;height:260px;right:-70px;top:-70px;background:rgba(242,207,80,.12)}
+    .bridge:after{width:180px;height:180px;left:-20px;bottom:-40px;background:rgba(114,152,75,.12)}
+    .bridge .eyebrow{background:rgba(255,255,255,.1);color:rgba(255,255,255,.78)}
+    .bridge h2{font:900 clamp(28px,3vw,38px)/1.2 'Nunito',sans-serif;margin-top:16px;position:relative;z-index:1}
+    .bridge p{margin-top:12px;color:rgba(255,255,255,.72);font-size:15px;line-height:1.9;position:relative;z-index:1}
+    .brand-steps{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;margin-top:30px;position:relative;z-index:1}
+    .step{
+      min-width:240px;padding:22px 28px;border-radius:24px;text-align:center;border:1px solid rgba(255,255,255,.18)
+    }
+    .step.dim{background:rgba(255,255,255,.09)}
+    .step.lit{background:rgba(242,207,80,.18);border-color:rgba(242,207,80,.6)}
+    .step small{display:block;font:800 10px/1 'Nunito',sans-serif;letter-spacing:2px;color:rgba(255,255,255,.44);margin-bottom:8px}
+    .step strong{display:block;font:900 28px/1.1 'Nunito',sans-serif;margin-bottom:5px}
+    .step span{font-size:13px;color:rgba(255,255,255,.66)}
+    .step-arrow{font:900 30px/1 'Nunito',sans-serif;color:rgba(242,207,80,.8)}
+
+    .contact{
+      background:linear-gradient(180deg,#F2CF50 0%, #F6D968 100%);
+      border-radius:40px;padding:40px;box-shadow:var(--shadow-md)
+    }
+    .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch}
+    .contact-main h2{font:900 clamp(28px,3vw,40px)/1.15 'Nunito',sans-serif;margin-top:16px}
+    .contact-main p{margin-top:14px;font-size:15px;line-height:1.9;color:var(--gray700);max-width:560px}
+    .contact-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+    .contact-card{padding:24px;background:rgba(255,255,255,.84);backdrop-filter:blur(8px)}
+    .contact-card h3{font-size:18px;font-weight:900;margin-bottom:12px}
+    .contact-list{display:grid;gap:12px}
+    .contact-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--gray600);line-height:1.75}
+    .contact-item strong{color:var(--gray900)}
+    .contact-note{margin-top:16px;padding-top:16px;border-top:1px dashed var(--gray200);font-size:12px;color:var(--gray400);line-height:1.8}
+
+    footer{padding:34px 0 48px}
+    .footer{
+      background:var(--gray900);border-radius:32px;padding:30px 28px;
+      display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap
+    }
+    .footer-brand strong{display:block;font:900 22px/1 'Nunito',sans-serif;color:#fff}
+    .footer-brand strong span{color:var(--yellow)}
+    .footer-brand small{display:block;margin-top:10px;font-size:12px;color:rgba(255,255,255,.34)}
+    .footer-links{display:flex;gap:16px;flex-wrap:wrap}
+    .footer-links a{font-size:13px;color:rgba(255,255,255,.5)}
+    .footer-links a:hover{color:var(--yellow)}
+
+    /* responsive */
+    @media (max-width: 1080px){
+      .hero,.why-grid,.contact-grid{grid-template-columns:1fr}
+      .hero-copy{max-width:none}
+      .hero-visual-card{max-width:680px;margin:0 auto}
+      .cards-3{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width: 820px){
+      nav{padding:14px}
+      .brand-copy{display:none}
+      .nav-links{gap:8px}
+      .nav-links a.link{display:none}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .camp-grid,.cards-3{grid-template-columns:1fr}
+      .hero{padding:54px 22px;border-radius:34px}
+      .story-wrap,.contact,.bridge{padding:28px 22px}
+      .sec{padding:72px 0}
+    }
+    @media (max-width: 560px){
+      .wrap{width:min(calc(100% - 24px), var(--max))}
+      nav{width:min(calc(100% - 12px),1240px)}
+      .btn-primary,.btn-secondary{width:100%}
+      .hero-actions,.contact-actions{display:grid;grid-template-columns:1fr}
+      .hero h1{font-size:36px}
+      .section-head{margin-bottom:24px}
+      .stats-grid{padding:18px 14px;gap:12px}
+      .stat{padding:12px 8px}
+      .step-arrow{display:none}
+      .brand-steps{gap:12px}
+      .contact-card{padding:20px}
+      .footer{padding:24px 20px}
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-shell">
+    <nav aria-label="主選單">
+      <div class="brand">
+        <div class="brand-pill">
+          <strong>笛飛兒</strong><i></i><span>EQ</span>
+        </div>
+        <div class="brand-copy">
+          <b>Kid Developing</b>
+          <small>國小孩子的情緒成長教育</small>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a class="link" href="#about">關於笛飛兒</a>
+        <a class="link" href="#courses">課程介紹</a>
+        <a class="link" href="#stories">成長故事</a>
+        <a class="link" href="#camps">營隊課程</a>
+        <a class="btn-tertiary" href="#contact">免費諮詢</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <section class="hero-wrap wrap">
+      <div class="hero panel">
+        <div class="hero-copy">
+          <div class="hero-kicker"><i></i>笛飛兒 × 超過 17 年 EQ 教育實戰</div>
+          <div class="hero-en">GROW · CHALLENGE · SHINE</div>
+          <h1>
+            讓孩子的<span class="blue">情緒智慧</span><br>
+            成為<span class="mark">最強</span>的<br>
+            <span class="green">人生武器</span>
+          </h1>
+          <p>
+            專為 6–12 歲國小學童設計的 EQ 成長課程。透過真實情境演練與個別化引導，幫助孩子建立情緒管理、人際互動與自我認同的核心能力。
+          </p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#contact">免費了解課程</a>
+            <a class="btn-secondary" href="#stories">看成長故事 →</a>
+          </div>
+          <div class="hero-notes">
+            <span>✔ 小班引導</span>
+            <span>✔ 親師同步陪伴</span>
+            <span>✔ 適合國小 6–12 歲</span>
+          </div>
+        </div>
+
+        <div class="hero-visual-card" aria-hidden="true">
+          <svg viewBox="0 0 340 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="170" cy="166" r="138" fill="#FDF7DC" opacity=".8"/>
+            <ellipse cx="170" cy="288" rx="118" ry="12" fill="#F2CF50" opacity=".2"/>
+            <circle cx="100" cy="134" r="24" fill="#FFD9A8"/>
+            <path d="M76 126 Q80 102 100 100 Q120 102 124 122 Q117 110 100 110 Q83 110 76 126Z" fill="#3D2A1A"/>
+            <path d="M78 180 Q100 168 122 180 L126 238 H74 Z" fill="#285DAE"/>
+            <ellipse cx="100" cy="178" rx="14" ry="7" fill="#3A72C8" opacity=".4"/>
+            <path d="M78 182 L55 214" stroke="#FFD9A8" stroke-width="9" stroke-linecap="round"/>
+            <path d="M122 182 L134 210" stroke="#FFD9A8" stroke-width="9" stroke-linecap="round"/>
+            <rect x="44" y="210" width="22" height="16" rx="5" fill="#F7F0DF" stroke="#DDD8CE" stroke-width="1"/>
+            <line x1="50" y1="215" x2="60" y2="215" stroke="#285DAE" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="50" y1="220" x2="62" y2="220" stroke="#285DAE" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="74" y1="238" x2="70" y2="278" stroke="#2D2A24" stroke-width="8" stroke-linecap="round"/>
+            <line x1="126" y1="238" x2="130" y2="278" stroke="#2D2A24" stroke-width="8" stroke-linecap="round"/>
+            <ellipse cx="70" cy="280" rx="10" ry="5" fill="#2D2A24"/>
+            <ellipse cx="130" cy="280" rx="10" ry="5" fill="#2D2A24"/>
+            <circle cx="93" cy="130" r="2.8" fill="#3D2A1A"/>
+            <circle cx="107" cy="130" r="2.8" fill="#3D2A1A"/>
+            <path d="M92 140 Q100 148 108 140" stroke="#8B5E3C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+            <ellipse cx="88" cy="140" rx="5" ry="3" fill="#FFB09A" opacity=".45"/>
+            <ellipse cx="112" cy="140" rx="5" ry="3" fill="#FFB09A" opacity=".45"/>
+            <circle cx="170" cy="116" r="26" fill="#FFD9A8"/>
+            <path d="M144 108 Q148 82 170 80 Q192 82 196 106 Q188 92 170 91 Q152 92 144 108Z" fill="#2D1A0A"/>
+            <path d="M146 167 Q170 155 194 167 L199 232 H141 Z" fill="#F2CF50"/>
+            <ellipse cx="170" cy="165" rx="16" ry="8" fill="#EEB800" opacity=".35"/>
+            <path d="M146 168 L122 140" stroke="#FFD9A8" stroke-width="10" stroke-linecap="round"/>
+            <path d="M194 168 L218 140" stroke="#FFD9A8" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="119" cy="137" r="11" fill="#FFD9A8"/>
+            <circle cx="221" cy="137" r="11" fill="#FFD9A8"/>
+            <line x1="141" y1="232" x2="136" y2="276" stroke="#2D2A24" stroke-width="8" stroke-linecap="round"/>
+            <line x1="199" y1="232" x2="204" y2="276" stroke="#2D2A24" stroke-width="8" stroke-linecap="round"/>
+            <ellipse cx="136" cy="278" rx="11" ry="5" fill="#2D2A24"/>
+            <ellipse cx="204" cy="278" rx="11" ry="5" fill="#2D2A24"/>
+            <circle cx="162" cy="112" r="3.2" fill="#2D1A0A"/>
+            <circle cx="178" cy="112" r="3.2" fill="#2D1A0A"/>
+            <path d="M160 124 Q170 135 180 124" stroke="#8B5E3C" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <ellipse cx="157" cy="123" rx="5" ry="3" fill="#FFB09A" opacity=".45"/>
+            <ellipse cx="183" cy="123" rx="5" ry="3" fill="#FFB09A" opacity=".45"/>
+            <text x="155" y="68" font-size="22" fill="#F2CF50">★</text>
+            <circle cx="198" cy="62" r="4" fill="#72984B" opacity=".7"/>
+            <circle cx="142" cy="70" r="3" fill="#285DAE" opacity=".5"/>
+            <circle cx="240" cy="134" r="24" fill="#FCCFA0"/>
+            <path d="M216 126 Q220 103 240 101 Q260 103 264 122 Q257 110 240 110 Q223 110 216 126Z" fill="#1A0A0A"/>
+            <path d="M258 104 Q270 92 275 78" stroke="#1A0A0A" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="275" cy="76" r="5" fill="#F2CF50"/>
+            <path d="M218 180 Q240 168 262 180 L266 238 H216 Z" fill="#72984B"/>
+            <ellipse cx="240" cy="178" rx="14" ry="7" fill="#537032" opacity=".4"/>
+            <path d="M218 182 L198 210" stroke="#FCCFA0" stroke-width="9" stroke-linecap="round"/>
+            <path d="M262 182 L274 212" stroke="#FCCFA0" stroke-width="9" stroke-linecap="round"/>
+            <circle cx="275" cy="215" r="10" fill="#FCCFA0"/>
+            <line x1="216" y1="238" x2="212" y2="278" stroke="#2D2A24" stroke-width="8" stroke-linecap="round"/>
+            <line x1="266" y1="238" x2="270" y2="278" stroke="#2D2A24" stroke-width="8" stroke-linecap="round"/>
+            <ellipse cx="212" cy="280" rx="10" ry="5" fill="#2D2A24"/>
+            <ellipse cx="270" cy="280" rx="10" ry="5" fill="#2D2A24"/>
+            <circle cx="234" cy="130" r="2.8" fill="#2D1A0A"/>
+            <circle cx="246" cy="130" r="2.8" fill="#2D1A0A"/>
+            <path d="M234 141 Q240 149 248 141" stroke="#8B5E3C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+            <ellipse cx="229" cy="141" rx="5" ry="3" fill="#FFB09A" opacity=".4"/>
+            <ellipse cx="251" cy="141" rx="5" ry="3" fill="#FFB09A" opacity=".4"/>
+            <rect x="48" y="56" width="62" height="32" rx="12" fill="#285DAE"/>
+            <path d="M66 88 L62 101 L78 88Z" fill="#285DAE"/>
+            <text x="79" y="77" text-anchor="middle" font-family="Nunito, sans-serif" font-size="14" font-weight="900" fill="white">EQ UP!</text>
+            <circle cx="290" cy="82" r="20" fill="#F2CF50"/>
+            <text x="290" y="90" text-anchor="middle" font-size="18" fill="#C9A820">♥</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats wrap" aria-label="品牌數據">
+      <div class="stats-grid">
+        <div class="stat"><strong>17+</strong><span>年深耕 EQ 教育</span></div>
+        <div class="stat"><strong>3,000+</strong><span>位孩子成長見證</span></div>
+        <div class="stat"><strong>3</strong><span>個教室遍及雙北</span></div>
+        <div class="stat"><strong>5</strong><span>本親子教養著作</span></div>
+      </div>
+    </section>
+
+    <section class="sec wrap" id="courses">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow blue">Courses</span>
+          <h2 class="h2">找到最適合孩子的 EQ 成長課程</h2>
+          <p>保留原版童趣視覺與暖色調，並將資訊層級重新整理為更清楚的課程導購版型，讓家長一眼就能理解差異與適合對象。</p>
+        </div>
+        <a class="btn-tertiary" href="#contact">查看所有課程 →</a>
+      </div>
+      <div class="cards-3">
+        <article class="course-card">
+          <div class="course-top blue">
+            <div class="icon-box blue">⭐</div>
+            <span class="level blue">初階</span>
+            <small>Entry Level</small>
+            <h3>智慧歷練班</h3>
+          </div>
+          <div class="course-body">
+            <p>系統性 EQ 主題課程，多元真實情境演練，幫孩子奠定情緒管理、人際互動與表達能力的穩固基礎。</p>
+            <a style="color:var(--blue)" href="#contact">了解課程 →</a>
+          </div>
+        </article>
+        <article class="course-card">
+          <div class="course-top yellow">
+            <div class="icon-box yellow">⚡</div>
+            <span class="level yellow">進階</span>
+            <small>Advanced</small>
+            <h3>菁英歷練班</h3>
+          </div>
+          <div class="course-body">
+            <p>針對具強烈優勢潛能的孩子，安排更進一步的難題試煉與引導，讓天賦真正轉化為可持續的競爭力。</p>
+            <a style="color:var(--yellow-dark)" href="#contact">了解課程 →</a>
+          </div>
+        </article>
+        <article class="course-card">
+          <div class="course-top green">
+            <div class="icon-box green">🌱</div>
+            <span class="level green">特殊</span>
+            <small>Breakthrough</small>
+            <h3>困境突破班</h3>
+          </div>
+          <div class="course-body">
+            <p>針對有迫切成長需求的孩子，深入個別引導，協助快速提升情緒管理、溝通反應與人際修復能力。</p>
+            <a style="color:var(--green)" href="#contact">了解課程 →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="sec wrap" id="about">
+      <div class="why-grid">
+        <div>
+          <span class="eyebrow green">Why Kid Developing</span>
+          <h2 class="h2">為什麼這版更適合直接上線使用</h2>
+          <p style="margin-top:14px;color:var(--gray600);font-size:15px;line-height:1.9">我將你原本的視覺方向保留，但把頁面結構整理成更標準的品牌導覽型 landing page：資訊密度更平衡、按鈕更聚焦、各區塊間距更一致，並補上手機版斷點。</p>
+          <div class="why-list">
+            <div class="feature-card">
+              <div class="feature-icon blue">🎯</div>
+              <div>
+                <h4>資訊層級更清楚</h4>
+                <p>從品牌價值、課程分類、成長故事到最終 CTA，導購動線更完整，不會只停留在好看。</p>
+              </div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon yellow">📱</div>
+              <div>
+                <h4>補齊手機版排版</h4>
+                <p>平板與手機版改為單欄堆疊，按鈕、卡片與統計區在小尺寸螢幕也更容易閱讀與操作。</p>
+              </div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon green">🎨</div>
+              <div>
+                <h4>配色維持品牌一致</h4>
+                <p>主色仍以藍、黃、綠與暖米色為核心，保留親和與教育感，同時提升高級感與可讀性。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="visual-panel">
+          <svg viewBox="0 0 280 280" width="100%" fill="none" aria-hidden="true">
+            <circle cx="140" cy="140" r="128" fill="#FDF7DC" opacity=".7"/>
+            <rect x="88" y="56" width="104" height="94" rx="52" fill="#F2CF50"/>
+            <rect x="100" y="68" width="80" height="70" rx="40" fill="#F7F0DF"/>
+            <text x="140" y="118" text-anchor="middle" font-family="Nunito, sans-serif" font-size="34" font-weight="900" fill="#285DAE">EQ</text>
+            <rect x="118" y="150" width="44" height="18" rx="9" fill="#F2CF50"/>
+            <rect x="106" y="165" width="68" height="16" rx="8" fill="#285DAE"/>
+            <path d="M103 152 L82 188 L106 174 L117 195 L117 152Z" fill="#72984B" opacity=".8"/>
+            <path d="M177 152 L198 188 L174 174 L163 195 L163 152Z" fill="#72984B" opacity=".8"/>
+            <circle cx="112" cy="226" r="15" fill="#FFD9A8"/>
+            <rect x="100" y="240" width="26" height="20" rx="8" fill="#285DAE"/>
+            <circle cx="168" cy="222" r="15" fill="#FCCFA0"/>
+            <rect x="156" y="236" width="26" height="20" rx="8" fill="#72984B"/>
+          </svg>
+          <div class="mini-badges">
+            <span>真實情境演練</span>
+            <span>小班陪伴</span>
+            <span>親師同步</span>
+            <span>個別化建議</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec wrap" id="stories">
+      <div class="story-wrap">
+        <div class="section-head" style="margin-bottom:26px">
+          <div>
+            <span class="eyebrow yellow">Growth Stories</span>
+            <h2 class="h2">孩子們的真實成長</h2>
+          </div>
+        </div>
+        <div class="cards-3">
+          <article class="story-card">
+            <div class="quote">“</div>
+            <p>原本衝動易怒的他，現在能在同學衝突時主動出來協調，老師說他是班上情緒最穩定的孩子。</p>
+            <div class="author">
+              <div class="avatar blue">旻</div>
+              <div><strong>旻諺的媽媽</strong><span>智慧歷練班・小四</span></div>
+            </div>
+          </article>
+          <article class="story-card">
+            <div class="quote">“</div>
+            <p>女兒以前總是配合別人。現在她知道自己要什麼，也能溫和表達立場，整體氣質很不一樣。</p>
+            <div class="author">
+              <div class="avatar yellow">伶</div>
+              <div><strong>伶倢的爸爸</strong><span>菁英歷練班・小六</span></div>
+            </div>
+          </article>
+          <article class="story-card">
+            <div class="quote">“</div>
+            <p>連英國短期交換學校都問他是否願意留下就讀——自信、自在、穩重，這是現在的冠勳。</p>
+            <div class="author">
+              <div class="avatar green">冠</div>
+              <div><strong>冠勳的父母</strong><span>困境突破班・國中</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec wrap" id="camps">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow green">Camps</span>
+          <h2 class="h2">營隊課程</h2>
+          <p>寒暑假的密集課程可作為家長最關心的第二層轉換入口，因此這裡改成雙卡式資訊區塊，更適合後續延伸成報名頁。</p>
+        </div>
+      </div>
+      <div class="camp-grid">
+        <article class="info-card">
+          <div class="info-bar blue"></div>
+          <div class="info-body">
+            <small>Winter / Summer Camp</small>
+            <h3>情緒 &amp; 人際 EQ 鍛鍊營</h3>
+            <p>以真實情境挑戰為核心的密集營隊，專注培養情緒管理與人際溝通兩大關鍵能力，適合作為短期快速建立基礎的方案。</p>
+          </div>
+        </article>
+        <article class="info-card">
+          <div class="info-bar yellow"></div>
+          <div class="info-body">
+            <small>Adventure Camp</small>
+            <h3>冒險挑戰 EQ 兒童營</h3>
+            <p>以戶外任務與團隊互動結合 EQ 學習，讓孩子在離開舒適圈的過程中，真正體會合作、表達與自我突破。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="sec wrap">
+      <div class="bridge">
+        <span class="eyebrow">Family Brands · 同一教育團隊</span>
+        <h2>從學齡前到小學，陪伴孩子每個成長階段</h2>
+        <p>笛飛兒與「跳養 App」來自同一個教育團隊，針對不同年齡段提供最適合的成長支援，這段也可作為品牌家族延伸模組使用。</p>
+        <div class="brand-steps">
+          <div class="step dim">
+            <small>TOIOYO APP</small>
+            <strong>跳養</strong>
+            <span>學齡前 1.5–6 歲</span>
+          </div>
+          <div class="step-arrow">→</div>
+          <div class="step lit">
+            <small>KID DEVELOPING</small>
+            <strong>笛飛兒</strong>
+            <span>國小 6–12 歲</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec wrap" id="contact">
+      <div class="contact">
+        <div class="contact-grid">
+          <div class="contact-main">
+            <span class="eyebrow yellow">Call To Action</span>
+            <h2>準備好讓孩子開始成長了嗎？</h2>
+            <p>這裡我直接補成可上線的 CTA 區塊，讓頁面不只是展示 mockup，而是可以實際承接家長諮詢、報名與聯絡資訊。</p>
+            <div class="contact-actions">
+              <a class="btn-primary" href="#">免費預約課程諮詢</a>
+              <a class="btn-secondary" href="#">下載課程簡介</a>
+            </div>
+          </div>
+          <aside class="contact-card">
+            <h3>聯絡資訊區塊</h3>
+            <div class="contact-list">
+              <div class="contact-item"><span>📞</span><div><strong>電話</strong><br>02-0000-0000</div></div>
+              <div class="contact-item"><span>💬</span><div><strong>LINE / 官方客服</strong><br>@kiddeveloping</div></div>
+              <div class="contact-item"><span>📍</span><div><strong>教室位置</strong><br>台北 / 新北多點教室，可依實際據點替換</div></div>
+              <div class="contact-item"><span>⏰</span><div><strong>服務時間</strong><br>週一至週六 10:00–19:00</div></div>
+            </div>
+            <div class="contact-note">建議正式上線時，把這個區塊改接真實表單、官方 LINE 或 CRM 留單機制，轉換率會更完整。</div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="footer">
+      <div class="footer-brand">
+        <strong><span>笛飛兒</span> EQ 教育</strong>
+        <small>© 2026 Kid Developing. All Rights Reserved.</small>
+      </div>
+      <div class="footer-links">
+        <a href="#about">關於我們</a>
+        <a href="#courses">課程介紹</a>
+        <a href="#stories">成長故事</a>
+        <a href="#camps">營隊課程</a>
+        <a href="#contact">聯絡我們</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
